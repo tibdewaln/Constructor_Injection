@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" 
+xmlns:p="http://www.springframework.org/schema/p"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:context="http://www.springframework.org/schema/context"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-4.3.xsd"
+>
+    <!--<bean id="ac" class="springapplication.Test" p:id="20" p:name="Nakul"/>-->
+    
+    <!-- <context:property-placeholder location="data.properties"/>-->
+    
+    <bean id="custObj" class="com.springbeans.Customer" name="customer">
+        <constructor-arg name="custId" value="12"/>
+        <constructor-arg name="custName" value="abc"/>
+        <constructor-arg name="emailId" value="xyz@abc"/>
+        <constructor-arg name="contactNo" value="9876543210"/>
+    </bean>
+    
+    <bean id="memObj" class="com.springbeans.MemberShip" name="membership">
+        <constructor-arg value="14"/>
+        <constructor-arg value="typeabc"/>
+        <constructor-arg value="2019"/>
+        <constructor-arg ref="custObj"/>
+    </bean>
+    
+</beans>
